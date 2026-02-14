@@ -1,0 +1,46 @@
+/*
+	300 : EyeLevelLight
+	400 : EyeLevelMedium
+	500 : EyeLevelSemiBold
+	700 : EyeLevelBold
+*/
+@font-face {
+	font-family:'EyeLevel';
+	font-style:normal;
+	font-weight:300;
+	src: url(/fonts/EyeLevelLight.eot);
+	src: local(※),
+		 url(/fonts/EyeLevelLight.woff2) format('woff2'),
+	     url(/fonts/EyeLevelLight.woff) format('woff'),
+	     url(/fonts/EyeLevelLight.otf) format('opentype');
+}
+@font-face {
+	font-family:'EyeLevel';
+	font-style:normal;
+	font-weight:400;
+	src: url(/fonts/EyeLevelMedium.eot);
+	src: local(※),
+		 url(/fonts/EyeLevelMedium.woff2) format('woff2'),
+	     url(/fonts/EyeLevelMedium.woff) format('woff'),
+	     url(/fonts/EyeLevelMedium.otf) format('opentype');
+}
+@font-face {
+	font-family:'EyeLevel';
+	font-style:normal;
+	font-weight:500;
+	src: url(/fonts/EyeLevelSemiBold.eot);
+	src: local(※),
+		 url(/fonts/EyeLevelSemiBold.woff2) format('woff2'),
+	     url(/fonts/EyeLevelSemiBold.woff) format('woff'),
+	     url(/fonts/EyeLevelSemiBold.otf) format('opentype');
+}
+@font-face {
+	font-family:'EyeLevel';
+	font-style:normal;
+	font-weight:700;
+	src: url(/fonts/EyeLevelLight.eot);
+	src: local(※),
+		 url(/fonts/EyeLevelBold.woff2) format('woff2'),
+	     url(/fonts/EyeLevelBold.woff) format('woff'),
+	     url(/fonts/EyeLevelBold.otf) format('opentype');
+}
