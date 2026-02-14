@@ -4,6 +4,8 @@ from django.urls import path, include
 from django.shortcuts import redirect
 
 urlpatterns = [
+    path('css/<path:path>', lambda request, path: redirect(f"/static/css/{path}")),
+    path('js/<path:path>', lambda request, path: redirect(f"/static/js/{path}")),
     path('images/blt/arrow2-down.png', lambda request: redirect("/static/images/blt/arrow2-down.png.svg")),
     path('images/icon/email.png', lambda request: redirect("/static/images/icon/email.png.svg")),
     path('images/icon/facebook.png', lambda request: redirect("/static/images/icon/facebook.png.svg")),
