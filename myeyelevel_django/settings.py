@@ -9,12 +9,19 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-myeyelevel-dev-key-change-in-production'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-myeyelevel-dev-key-change-in-production')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True').lower() in ('1', 'true', 'yes')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app', '.now.sh', 'eyelearning-cl.vercel.app', 'eyelearning-9tfat9iuz-bilalkhan999s-projects.vercel.app']
+
+# CSRF Trusted Origins for Vercel
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.vercel.app',
+    'https://eyelearning-cl.vercel.app',
+    'https://eyelearning-9tfat9iuz-bilalkhan999s-projects.vercel.app',
+]
 
 # Application definition
 INSTALLED_APPS = [
