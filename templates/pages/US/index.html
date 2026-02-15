@@ -93,7 +93,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta name="keywords" content="global, math, english, school, after, study, how to study, franchise, homework, centers, learning center, learningcenter, learning centers, global learning center, eye level learning center, kids education, level, english online, after school, math online, math tutor, tutor, math tutoring, study techniques, kids, tutors, olympiad, critical thinking, eye level, eyelevel, myeyelevel, my eye level, language, education, teaching child, math learning, english learning, child learning, self-directed learning, how to learn, tutoring, online tutoring, online learning, enrichment, i am the key, childs, afterschool, tests, self directed, korean, daekyo, enopi, e.nopi, noonnoppi">
 	
 	
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script>
+		(function () {
+			var host = (window.location && window.location.hostname) ? window.location.hostname : '';
+			var isProd = host === 'www.myeyelevel.com' || host === 'myeyelevel.com';
+			if (!isProd) return;
+			var s = document.createElement('script');
+			s.src = 'https://www.google.com/recaptcha/api.js';
+			s.async = true;
+			s.defer = true;
+			document.head.appendChild(s);
+		})();
+	</script>
 	
 	<!-- 2023-11-22 추가 -->
 	<link rel="stylesheet" type="text/css" href="/css/aos/aos.css">
