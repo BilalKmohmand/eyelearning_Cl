@@ -1,8 +1,6 @@
 
 
 
-
-
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -11,8 +9,18 @@
 #recapchaArea {margin-top: 40px; text-align: center;}
 #recapchaArea > div {display: inline-block;}
 </style>
-	<script src="https://www.google.com/recaptcha/api.js"></script>
-	
+<script>
+	(function () {
+		var host = (window.location && window.location.hostname) ? window.location.hostname : '';
+		var isProd = host === 'www.myeyelevel.com' || host === 'myeyelevel.com';
+		if (!isProd) return;
+		var s = document.createElement('script');
+		s.src = 'https://www.google.com/recaptcha/api.js';
+		s.async = true;
+		s.defer = true;
+		document.head.appendChild(s);
+	})();
+</script>
 	
 		<script>
 			!function(f,b,e,v,n,t,s)
@@ -223,11 +231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<ul id="gnbFMenu">
 				
 						<li><a href="/US/careers/careers.do">CAREERS</a></li>
-					
-				
-				
 					<li><a href="/US/footer/faq.do">FAQ</a></li>
-				
 				<li><a href="/US/footer/sitemap.do">SITEMAP</a></li>
 				<li><a href="/US/footer/global-network/subsidiary-contacts.do">GLOBAL NETWORK</a></li>
 				<li><a href="https://study.myeyelevel.com/main.do" target="_blank">Learning Room</a></li>
@@ -238,11 +242,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="util">
 			<div class="u-globe">
 				<div class="box dropdown-wrap">
-					
-							
 									<button type="button" class="dropdown-btn"><span class="icon-frag usa"></span>U.S.A./Canada [EN]</button>		
-								
-						
 					<ul class="dropdown-grade">
 						<li><a href="/Global/index.do?lang=en&country=Global"><span class="icon-frag global"></span>Global</a></li>
 						<li><a href="/HongKong/index.do?lang=en&country=HongKong"><span class="icon-frag hk"></span>Hong Kong [EN]</a></li>
