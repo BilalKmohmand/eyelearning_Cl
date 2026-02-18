@@ -14,13 +14,26 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-myeyelevel-dev-key-change-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True').lower() in ('1', 'true', 'yes')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app', '.now.sh', 'eyelearning-cl.vercel.app', 'eyelearning-9tfat9iuz-bilalkhan999s-projects.vercel.app']
+_extra_allowed_hosts = [h.strip() for h in os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',') if h.strip()]
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '.vercel.app',
+    '.now.sh',
+    'eyelearning-cl.vercel.app',
+    'eyelearning-9tfat9iuz-bilalkhan999s-projects.vercel.app',
+    'myeyelevelhicksville.com',
+    'www.myeyelevelhicksville.com',
+    *_extra_allowed_hosts,
+]
 
 # CSRF Trusted Origins for Vercel
 CSRF_TRUSTED_ORIGINS = [
     'https://*.vercel.app',
     'https://eyelearning-cl.vercel.app',
     'https://eyelearning-9tfat9iuz-bilalkhan999s-projects.vercel.app',
+    'https://myeyelevelhicksville.com',
+    'https://www.myeyelevelhicksville.com',
 ]
 
 # Application definition
