@@ -129,6 +129,6 @@ EMAIL_HOST_USER = 'resend'
 EMAIL_HOST_PASSWORD = os.getenv('RESEND_API_KEY', '')
 
 # Contact form recipient
-CONTACT_EMAIL_RECIPIENT = 'sjon54466@gmail.com'
+CONTACT_EMAIL_RECIPIENT = 'Eyelevelhicksville@gmail.com'
 DEFAULT_FROM_EMAIL = 'Eye Level <onboarding@resend.dev>'  # Can use onboarding@resend.dev for testing
 SERVER_EMAIL = 'onboarding@resend.dev'
