@@ -94,7 +94,7 @@ def contact_us(request):
         programs_str = ', '.join(programs) if programs else 'None selected'
         
         # Build email message
-        center_link = 'https://share.google/vpuc1tl6AtqNCd52n'
+        center_link = 'https://www.myeyelevelhicksville.com/US/index.do?lang=en&country=US'
         subject = f"Eye Level Contact Form | {center_name or 'Center not provided'} | {full_name or 'Name not provided'}"
         body = f"""New contact form submission:
 
@@ -214,7 +214,7 @@ def contact_proc(request):
     )
     programs_str = ', '.join(programs) if programs else 'None selected'
 
-    center_link = 'https://share.google/vpuc1tl6AtqNCd52n'
+    center_link = 'https://www.myeyelevelhicksville.com/US/index.do?lang=en&country=US'
 
     subject = f"Eye Level Contact Form | {center_name or 'Center not provided'} | {full_name or 'Name not provided'}"
     body = f"""New contact form submission:
