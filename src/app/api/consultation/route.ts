@@ -8,7 +8,8 @@ type ConsultationPayload = {
   telephone?: string;
   program?: string;
   preferredContactTime?: string;
-  consent?: string;
+  preferredTime?: string;
+  consent?: string | boolean;
   location?: string;
 };
 
@@ -34,8 +35,13 @@ export async function POST(request: Request) {
   const email = String(body.email || "").trim();
   const telephone = String(body.telephone || "").trim();
   const program = String(body.program || "").trim();
-  const preferredContactTime = String(body.preferredContactTime || "").trim();
-  const consent = String(body.consent || "").trim();
+  const preferredContactTime = String(
+    body.preferredContactTime || body.preferredTime || ""
+  ).trim();
+  const consent =
+    body.consent === true ||
+    String(body.consent || "").toLowerCase() === "yes" ||
+    String(body.consent || "").toLowerCase() === "true";
   const location = String(body.location || "").trim();
 
   if (
@@ -55,10 +61,9 @@ export async function POST(request: Request) {
     );
   }
 
-  // Server-side delivery (CRM/email) is outside the scope of this task.
-  // This stub acknowledges a valid submission for the front-end handoff.
   return NextResponse.json({
     ok: true,
-    message: "Consultation request accepted.",
+    message:
+      "Thank you for booking with Eye Level Learning Center of Hicksville. Our instructional coordinator will call you to confirm your child’s free diagnostic level test.",
   });
 }

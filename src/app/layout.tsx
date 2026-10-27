@@ -1,19 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree, Fraunces } from "next/font/google";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import { SiteShell } from "@/components/SiteShell";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-plus-jakarta",
   display: "swap",
+  weight: ["500", "600", "700", "800"],
 });
 
-const figtree = Figtree({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-figtree",
+  variable: "--font-dm-sans",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: SITE.themeColor,
+  themeColor: "#0F2137",
 };
 
 export default function RootLayout({
@@ -42,15 +44,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-US" className={`${fraunces.variable} ${figtree.variable}`}>
+    <html lang="en-US" className={`${plusJakarta.variable} ${dmSans.variable}`}>
       <head>
         <style
           dangerouslySetInnerHTML={{
-            __html: `body{margin:0;background:#f3f6f8;color:#0d2137}h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,serif}.site-header{position:sticky;top:0;z-index:50;background:rgba(243,246,248,.95);border-bottom:1px solid #c9d4de}`,
+            __html: `body{margin:0;background:#F8FAFC;color:#0F172A}h1,h2,h3,h4{font-family:var(--font-plus-jakarta),system-ui,sans-serif}`,
           }}
         />
       </head>
-      <body className={`${figtree.className} antialiased`}>
+      <body className={`${dmSans.className} antialiased bg-slate-50 text-slate-900 selection:bg-amber-100 selection:text-amber-900`}>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

@@ -60,7 +60,7 @@ export function faqPageSchema() {
       name: item.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: `${item.shortAnswer} ${item.detailedAnswer}`,
       },
     })),
   };
