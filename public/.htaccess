@@ -1,0 +1,44 @@
+# Eye Level Learning Center of Hicksville — Apache rules
+# Prefer HTTPS + www canonical host
+
+RewriteEngine On
+
+# Canonical host: http → https and non-www → www
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.myeyelevelhicksville\.com$ [NC]
+RewriteRule ^ https://www.myeyelevelhicksville.com%{REQUEST_URI} [L,R=301]
+
+# Legacy Eye Level US paths → clean local URLs
+RewriteRule ^US/index\.do$ / [L,R=301]
+RewriteCond %{QUERY_STRING} (^|&)country=US(&|$) [NC]
+RewriteCond %{QUERY_STRING} (^|&)lang=en(&|$) [NC]
+RewriteRule ^US/index\.do$ /? [L,R=301]
+
+RewriteRule ^US/programs/math\.do$ /math-tutoring-hicksville/ [L,R=301]
+RewriteRule ^US/programs/english\.do$ /english-tutoring-hicksville/ [L,R=301]
+RewriteRule ^US/customer/contact-us\.do$ /contact/ [L,R=301]
+RewriteRule ^US/footer/faq\.do$ /faq/ [L,R=301]
+
+# True 404 (do not soft-redirect unknown URLs to homepage)
+ErrorDocument 404 /404.html
+
+# Security headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src https://www.openstreetmap.org; base-uri 'self'; form-action 'self'"
+</IfModule>
+
+# Caching for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>

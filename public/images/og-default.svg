@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title">
+  <title id="title">Eye Level Learning Center of Hicksville</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D2137"/>
+      <stop offset="100%" stop-color="#243b53"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="140" r="90" fill="none" stroke="#2F6F5E" stroke-width="14"/>
+  <path d="M950 140h60M980 110v60" stroke="#B86A1C" stroke-width="10" stroke-linecap="round"/>
+  <text x="80" y="250" fill="#F3F6F8" font-family="Georgia, serif" font-size="64" font-weight="700">Eye Level Learning Center</text>
+  <text x="80" y="330" fill="#A8C0B6" font-family="Georgia, serif" font-size="54">of Hicksville</text>
+  <text x="80" y="420" fill="#D5DEE7" font-family="Arial, sans-serif" font-size="32">Math and English tutoring · Pre-K through Grade 12</text>
+  <text x="80" y="520" fill="#F3F6F8" font-family="Arial, sans-serif" font-size="28">760 S Broadway, Hicksville, NY 11801 · (516) 597-5300</text>
+</svg>
