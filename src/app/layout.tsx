@@ -42,15 +42,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-US">
+    <html lang="en-US" className={`${fraunces.variable} ${figtree.variable}`}>
       <head>
         <style
           dangerouslySetInnerHTML={{
-            __html: `body{margin:0;background:#f3f6f8;color:#0d2137;font-family:system-ui,sans-serif} .site-header{position:sticky;top:0;z-index:50;background:rgba(243,246,248,.95);border-bottom:1px solid #c9d4de}`,
+            __html: `body{margin:0;background:#f3f6f8;color:#0d2137}h1,h2,h3,h4{font-family:var(--font-fraunces),Georgia,serif}.site-header{position:sticky;top:0;z-index:50;background:rgba(243,246,248,.95);border-bottom:1px solid #c9d4de}`,
           }}
         />
       </head>
-      <body className={`${fraunces.variable} ${figtree.variable} antialiased`}>
+      <body className={`${figtree.className} antialiased`}>
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

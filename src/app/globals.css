@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Unlayered so fonts beat critical CSS and Tailwind layers */
+body {
+  font-family: var(--font-figtree), "Segoe UI", Candara, "DejaVu Sans",
+    "Trebuchet MS", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.brand-name,
+.hero-brand,
+.footer-title,
+.process-num {
+  font-family: var(--font-fraunces), "Iowan Old Style", "Palatino Linotype",
+    Palatino, Georgia, serif;
+}
+
 :root {
   /* Palette — Quiet Study Hall */
   --color-ink: #0d2137;
@@ -12,8 +30,8 @@
   --color-surface: #ffffff;
   --color-accent: #2f6f5e;
   --color-accent-hover: #245a4c;
-  --color-warm: #b86a1c;
-  --color-warm-hover: #955516;
+  --color-warm: #8a4e0f;
+  --color-warm-hover: #6f3e0b;
   --color-line: #c9d4de;
   --color-focus: #1d6bff;
   --color-danger: #a11d33;
@@ -94,7 +112,6 @@
       ),
       linear-gradient(180deg, #eef3f7 0%, var(--color-paper) 40%, #e8eef3 100%);
     background-attachment: fixed;
-    font-family: var(--font-text);
     font-size: 1.0625rem;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -109,7 +126,6 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-display);
     color: var(--color-ink);
     line-height: 1.2;
     font-weight: 600;
@@ -301,7 +317,6 @@
     font-size: 2.5rem;
     line-height: 1;
     color: var(--color-accent);
-    opacity: 0.35;
     margin-bottom: var(--space-2);
   }
 
