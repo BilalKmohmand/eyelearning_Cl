@@ -93,19 +93,29 @@ export function ConsultationForm({ id = "consultation-form" }: { id?: string }) 
         body: JSON.stringify(formData)
       });
 
-      if (!response.ok) {
-        throw new Error(`Server returned status ${response.status}`);
+      const result = (await response.json().catch(() => ({}))) as {
+        ok?: boolean;
+        success?: boolean;
+        message?: string;
+        error?: string;
+      };
+
+      if (!response.ok || result.ok === false || result.success === false) {
+        throw new Error(
+          result.error ||
+            `Server returned status ${response.status}`
+        );
       }
 
-      const result = await response.json();
       setSubmitSuccess(
         result.message ||
           'Thank you for booking with Eye Level Learning Center of Hicksville. Our instructional coordinator will call you to confirm your child’s free diagnostic level test.'
       );
-    } catch {
-      // Graceful fallback for local development or disconnected endpoint
-      setSubmitSuccess(
-        `Thank you, ${formData.parentName}. Your request for Eye Level Learning Center of Hicksville has been received. Our team will contact you at ${formData.telephone} to schedule your child’s free level test and consultation.`
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Something went wrong. Please call (516) 597-5300 or try again.'
       );
     } finally {
       setIsSubmitting(false);

@@ -1,69 +1,68 @@
 import { NextResponse } from "next/server";
+import {
+  normalizeConsultation,
+  processConsultation,
+} from "@/lib/consultation";
 
-type ConsultationPayload = {
-  parentName?: string;
-  childName?: string;
-  grade?: string;
-  email?: string;
-  telephone?: string;
-  program?: string;
-  preferredContactTime?: string;
-  preferredTime?: string;
-  consent?: string | boolean;
-  location?: string;
-};
-
-function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+export const runtime = "nodejs";
 
 export async function POST(request: Request) {
-  let body: ConsultationPayload;
+  let body: Record<string, unknown>;
 
   try {
     body = await request.json();
   } catch {
     return NextResponse.json(
-      { ok: false, error: "Invalid JSON body." },
+      { ok: false, success: false, error: "Invalid JSON body." },
       { status: 400 }
     );
   }
 
-  const parentName = String(body.parentName || "").trim();
-  const childName = String(body.childName || "").trim();
-  const grade = String(body.grade || "").trim();
-  const email = String(body.email || "").trim();
-  const telephone = String(body.telephone || "").trim();
-  const program = String(body.program || "").trim();
-  const preferredContactTime = String(
-    body.preferredContactTime || body.preferredTime || ""
-  ).trim();
-  const consent =
-    body.consent === true ||
-    String(body.consent || "").toLowerCase() === "yes" ||
-    String(body.consent || "").toLowerCase() === "true";
-  const location = String(body.location || "").trim();
-
-  if (
-    !parentName ||
-    !childName ||
-    !grade ||
-    !isValidEmail(email) ||
-    telephone.replace(/\D/g, "").length < 10 ||
-    !program ||
-    !preferredContactTime ||
-    !consent ||
-    location !== "Hicksville"
-  ) {
+  const normalized = normalizeConsultation(body);
+  if (!normalized.data) {
     return NextResponse.json(
-      { ok: false, error: "Validation failed." },
+      { ok: false, success: false, error: normalized.error || "Validation failed." },
       { status: 400 }
     );
   }
 
-  return NextResponse.json({
-    ok: true,
-    message:
-      "Thank you for booking with Eye Level Learning Center of Hicksville. Our instructional coordinator will call you to confirm your child’s free diagnostic level test.",
-  });
+  try {
+    const record = await processConsultation(normalized.data);
+
+    if (!record.delivery.stored && !record.delivery.emailed && !record.delivery.webhook) {
+      return NextResponse.json(
+        {
+          ok: false,
+          success: false,
+          error:
+            "We could not save your request. Please call (516) 597-5300 to book directly.",
+          delivery: record.delivery,
+        },
+        { status: 503 }
+      );
+    }
+
+    return NextResponse.json({
+      ok: true,
+      success: true,
+      id: record.id,
+      message: `Thank you, ${normalized.data.parentName}. Your consultation request for Eye Level Learning Center of Hicksville has been received. Our team will contact you at ${normalized.data.telephone} to confirm your child's diagnostic level test.`,
+      delivery: {
+        stored: record.delivery.stored,
+        emailed: record.delivery.emailed,
+        webhook: record.delivery.webhook,
+      },
+    });
+  } catch (error) {
+    console.error("consultation processing failed", error);
+    return NextResponse.json(
+      {
+        ok: false,
+        success: false,
+        error:
+          "Something went wrong saving your request. Please call (516) 597-5300.",
+      },
+      { status: 500 }
+    );
+  }
 }

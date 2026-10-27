@@ -42,10 +42,22 @@ npm start -- --port 43123
 - `DESIGN.md` — design rationale
 - `SEO-META.md` — title / description / canonical table
 
-## Consultation form
+## Consultation form backend
 
-`POST /api/consultation` validates the payload and returns JSON. Wire this stub to your CRM or email provider before production; delivery is outside the front-end scope.
+`POST /api/consultation/` validates the form, saves the request to `data/consultations.jsonl`, and can notify staff by email and/or webhook.
+
+Copy `.env.example` to `.env.local` and set:
+
+```bash
+RESEND_API_KEY=re_xxx                 # same provider used by the prior Django site
+CONTACT_EMAIL_RECIPIENT=eyelevelhicksville@gmail.com
+DEFAULT_FROM_EMAIL=Eye Level Hicksville <onboarding@resend.dev>
+CONSULTATION_WEBHOOK_URL=             # optional CRM/Zapier/Make endpoint
+```
+
+Without `RESEND_API_KEY`, submissions are still stored locally so the form works in development. With the key set, each request is emailed to `CONTACT_EMAIL_RECIPIENT` (default `eyelevelhicksville@gmail.com`).
 
 ## Stack
 
-Next.js (App Router), TypeScript, Tailwind CSS, original SVG assets.
+Next.js (App Router), TypeScript, Tailwind CSS, WebP imagery.
+
