@@ -39,46 +39,71 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
             <div className="lg:col-span-5 space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">Center Information</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                  Center Information
+                </h2>
                 <div className="space-y-4 text-sm text-slate-700">
                   <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                    <strong className="block text-slate-900 font-semibold mb-1">Business Name:</strong>
+                    <strong className="block text-slate-900 font-semibold mb-1">
+                      Business Name:
+                    </strong>
                     {SITE.name}
                   </div>
                   <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                    <strong className="block text-slate-900 font-semibold mb-1">Physical Address:</strong>
+                    <strong className="block text-slate-900 font-semibold mb-1">
+                      Physical Address:
+                    </strong>
                     {SITE.address.full}
                   </div>
                   <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                    <strong className="block text-slate-900 font-semibold mb-1">Telephone:</strong>
-                    <a href={`tel:${SITE.telephoneTel}`} className="text-amber-700 font-bold hover:underline">
+                    <strong className="block text-slate-900 font-semibold mb-1">
+                      Telephone:
+                    </strong>
+                    <a
+                      href={`tel:${SITE.telephoneTel}`}
+                      className="text-amber-700 font-bold hover:underline"
+                    >
                       {SITE.telephone}
                     </a>
                   </div>
                   <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                    <strong className="block text-slate-900 font-semibold mb-2">Operating Hours:</strong>
+                    <strong className="block text-slate-900 font-semibold mb-2">
+                      Operating Hours:
+                    </strong>
                     <ul className="space-y-1 text-xs text-slate-600">
-                      {SITE.hours.lines.map((line) => (
-                        <li key={line.days}>
-                          {line.days}: {line.hours}
-                        </li>
-                      ))}
+                      <li>Tuesday to Friday: 3:00 PM – 7:00 PM</li>
+                      <li>Saturday: 10:00 AM – 2:00 PM</li>
+                      <li>Sunday and Monday: Closed</li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <a
-                href={SITE.mapDirectionsUrl}
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-semibold hover:bg-slate-800"
-              >
-                Open in Google Maps →
-              </a>
+
+              <div>
+                <h3 className="text-lg font-bold text-slate-900 mb-3">
+                  Service Area Communities
+                </h3>
+                <p className="text-xs text-slate-600 mb-3">
+                  Our Hicksville center actively serves families across:
+                </p>
+                <div className="flex flex-wrap gap-2 text-xs text-slate-700">
+                  {SITE.serviceArea.map((town) => (
+                    <span
+                      key={town}
+                      className="bg-slate-100 px-3 py-1.5 rounded-md border border-slate-200"
+                    >
+                      {town}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
+
             <div className="lg:col-span-7">
-              <ConsultationForm />
+              <ConsultationForm id="contact-consultation-form" />
             </div>
           </div>
+
           <AtAGlance />
         </div>
       </section>
