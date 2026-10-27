@@ -88,7 +88,7 @@ export function ConsultationForm() {
     const payload = Object.fromEntries(data.entries());
 
     try {
-      const response = await fetch("/api/consultation", {
+      const response = await fetch("/api/consultation/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

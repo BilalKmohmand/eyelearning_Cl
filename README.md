@@ -32,12 +32,15 @@ npm start -- --port 43123
 
 ## Technical files
 
-- `public/robots.txt`, `public/sitemap.xml`, `public/llms.txt`
-- `public/404.html` (true 404 for static/Apache/Nginx)
+- App Router generates `/robots.txt` and `/sitemap.xml` (`src/app/robots.ts`, `src/app/sitemap.ts`)
+- Static copies for Apache/Nginx deploys: `deploy/robots.txt`, `deploy/sitemap.xml`
+- `public/llms.txt` — GEO summary for AI crawlers
+- `public/404.html` — true 404 for static/Apache/Nginx
 - `public/.htaccess` — Apache redirects, canonical host, security/cache headers
 - `deploy/nginx.conf` — Nginx redirects, canonical host, security/cache headers
 - `HANDOFF.md` — off-site checklist + JSON-LD validation steps
 - `DESIGN.md` — design rationale
+- `SEO-META.md` — title / description / canonical table
 
 ## Consultation form
 

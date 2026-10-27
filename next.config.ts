@@ -11,30 +11,31 @@ const nextConfig: NextConfig = {
       {
         source: "/US/index.do",
         destination: "/",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/US/programs/math.do",
         destination: "/math-tutoring-hicksville/",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/US/programs/english.do",
         destination: "/english-tutoring-hicksville/",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/US/customer/contact-us.do",
         destination: "/contact/",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/US/footer/faq.do",
         destination: "/faq/",
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },
+  skipTrailingSlashRedirect: false,
   async headers() {
     return [
       {
