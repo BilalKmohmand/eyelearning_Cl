@@ -57,6 +57,19 @@ CONSULTATION_WEBHOOK_URL=             # optional CRM/Zapier/Make endpoint
 
 Without `RESEND_API_KEY`, submissions are still stored locally so the form works in development. With the key set, each request is emailed to `CONTACT_EMAIL_RECIPIENT` (default `eyelevelhicksville@gmail.com`).
 
+## Deploy (Vercel)
+
+This site replaces the older Django + `vercel.json` Python build. The repo includes a Next.js `vercel.json`.
+
+In the Vercel project **Build & Development Settings**:
+
+1. Framework Preset: **Next.js** (not Other / Python)
+2. Build Command: `npm run build` (default)
+3. Output Directory: **leave empty** — do not set `public` or `static`
+4. Install Command: `npm install`
+5. Add env vars: `RESEND_API_KEY`, `CONTACT_EMAIL_RECIPIENT`, `DEFAULT_FROM_EMAIL`
+6. Redeploy from the latest `main` commit
+
 ## Stack
 
 Next.js (App Router), TypeScript, Tailwind CSS, WebP imagery.

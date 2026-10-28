@@ -24,7 +24,11 @@ export type ConsultationRecord = ConsultationInput & {
   };
 };
 
-const DATA_DIR = path.join(process.cwd(), "data");
+// On Vercel the function filesystem is read-only except /tmp.
+const DATA_DIR =
+  process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME
+    ? path.join("/tmp", "eyelevel-data")
+    : path.join(process.cwd(), "data");
 const STORE_FILE = path.join(DATA_DIR, "consultations.jsonl");
 
 function isValidEmail(email: string) {
