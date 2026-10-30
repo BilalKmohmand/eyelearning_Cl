@@ -1,189 +1,188 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { ConsultationForm } from "@/components/ConsultationForm";
 import { JsonLd } from "@/components/JsonLd";
+import { PageCta } from "@/components/PageCta";
 import { schemasForPage } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
 export const metadata = buildMetadata("english");
 
-export default function EnglishPage() {
+const writingForms = [
+  {
+    title: "Narrative",
+    prompt: "Sample prompt: “Write about a time your character helped a friend.”",
+    body: "Characters, sequence, and a clear ending—stories that stay on track.",
+  },
+  {
+    title: "Informational",
+    prompt: "Sample prompt: “Explain how a seed becomes a plant.”",
+    body: "Facts organized so a reader can learn something new without getting lost.",
+  },
+  {
+    title: "Opinion",
+    prompt: "Sample prompt: “Should recess be longer? Give two reasons.”",
+    body: "A clear claim, reasons, and wording that sounds like your child’s voice.",
+  },
+  {
+    title: "Research",
+    prompt: "Sample prompt: “Use two sources to describe an animal’s habitat.”",
+    body: "Gathering ideas, citing simply, and turning notes into a short report.",
+  },
+];
+
+const readingSkills = [
+  "Sounding out and recognizing words with growing confidence",
+  "Understanding what a paragraph is really saying",
+  "Noticing the main idea versus small details",
+  "Talking back to a text with their own words",
+];
+
+const progression = [
+  { title: "First sentence", detail: "A complete thought on the page" },
+  { title: "Short paragraph", detail: "Ideas that stick together" },
+  { title: "Multi-paragraph piece", detail: "Beginning, middle, and end" },
+  { title: "Research report", detail: "Sources, structure, and revision" },
+];
+
+export default function EnglishTutoringPage() {
   return (
     <>
       <JsonLd data={schemasForPage("english")} />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },
-          { name: "English Tutoring (Hicksville, NY)" },
+          { name: "English Tutoring Hicksville, NY" },
         ]}
       />
 
-      <section className="bg-slate-900 text-white py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-5">
-              <div className="text-xs font-semibold tracking-wider uppercase text-amber-400">
-                Reading Comprehension &amp; Formal Writing Mastery
-              </div>
-              <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-                English Tutoring in Hicksville, NY
-              </h1>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-                Eye Level Learning Center of Hicksville guides students through
-                structured reading comprehension, grammar conventions, vocabulary
-                acquisition, and comprehensive writing across four vital forms.
-              </p>
-              <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#english-booking"
-                  className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm rounded-lg transition-colors text-center min-h-[44px] flex items-center justify-center"
-                >
-                  Book Free English Level Test
-                </a>
-                <a
-                  href={`tel:${SITE.telephoneTel}`}
-                  className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm rounded-lg transition-colors border border-slate-700 text-center min-h-[44px] flex items-center justify-center"
-                >
-                  Call {SITE.telephone}
-                </a>
-              </div>
-            </div>
-            <div className="lg:col-span-5">
-              <div className="rounded-xl overflow-hidden border border-slate-700 shadow-xl bg-slate-800">
-                <Image
-                  src={SITE.englishImage}
-                  alt="Student reading literature and writing structured analytical notes at Eye Level Learning Center of Hicksville"
-                  width={600}
-                  height={450}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
+      {/* Editorial hero */}
+      <section className="bg-[#f7f4ef] border-b border-stone-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-800 mb-4">
+            English tutoring · Hicksville, NY
+          </p>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+            From the first sentence to a research report
+          </h1>
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto mb-8">
+            Eye Level English helps your child read with understanding and write
+            in the four forms schools ask for—without the Sunday-night panic.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/free-level-test/"
+              className="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm"
+            >
+              Book Free Level Test
+            </Link>
+            <a
+              href={`tel:${SITE.telephoneTel}`}
+              className="inline-flex items-center justify-center min-h-[44px] px-6 py-3 rounded-lg border border-stone-400 bg-white text-slate-900 font-semibold text-sm"
+            >
+              Call {SITE.telephone}
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <div className="text-xs font-semibold tracking-wider uppercase text-amber-700 mb-1">
-              Writing Mastery
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
-              Writing Instruction Across Four Essential Forms
+      {/* 2x2 writing forms */}
+      <section className="py-14 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+              Four writing forms, taught on purpose
             </h2>
-            <p className="text-base text-slate-600 leading-relaxed">
-              Writing is a decisive academic skill in elementary, middle, and high
-              school. While standard programs focus on grammar worksheets alone, Eye
-              Level teaches structured composition across four distinct genres.
+            <p className="text-sm sm:text-base text-slate-600">
+              Each form has its own job. Your child practices one clear skill at
+              a time so essays at school feel familiar.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                form: "Form 01",
-                title: "Narrative Writing",
-                body: "Students construct engaging personal and imaginative narratives, structuring clear sequences of events, descriptive sensory details, character perspectives, and cohesive resolutions.",
-              },
-              {
-                form: "Form 02",
-                title: "Informational Writing",
-                body: "Developing explanatory prose that clearly conveys factual knowledge, processes, and concepts using organized headings, logical topic sentences, and illustrative examples.",
-              },
-              {
-                form: "Form 03",
-                title: "Opinion Writing",
-                body: "Training learners to articulate persuasive viewpoints supported by structured reasoning, textual citations, counter-argument evaluation, and decisive concluding statements.",
-              },
-              {
-                form: "Form 04",
-                title: "Research Writing",
-                body: "Guiding students to gather textual evidence, synthesize findings across multiple reference sources, organize formal outlines, and draft analytical academic reports.",
-              },
-            ].map((item) => (
-              <div key={item.form} className="p-6 bg-slate-50 rounded-xl border border-slate-200">
-                <div className="text-amber-700 font-bold text-sm mb-2">{item.form}</div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{item.body}</p>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {writingForms.map((form) => (
+              <article
+                key={form.title}
+                className="border border-stone-200 bg-[#fbfaf7] p-6 sm:p-8"
+              >
+                <h3 className="text-xl font-extrabold text-slate-900 mb-2">
+                  {form.title}
+                </h3>
+                <p className="text-sm text-slate-600 mb-4 leading-relaxed">
+                  {form.body}
+                </p>
+                <p className="text-xs sm:text-sm italic text-amber-900/90 border-l-2 border-amber-500 pl-3">
+                  {form.prompt}
+                </p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div className="space-y-6">
-              <div className="text-xs font-semibold tracking-wider uppercase text-amber-700">
-                Core Language Arts
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-                Comprehensive Reading Comprehension &amp; Grammar
-              </h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Reading comprehension and writing are mutually reinforcing. Eye Level
-                builds reading stamina and analytical precision through systematic
-                study booklets tailored to each learner’s diagnostic baseline.
-              </p>
-              <div className="space-y-3 text-sm text-slate-700">
-                <div className="p-3.5 bg-white rounded-lg border border-slate-200">
-                  <strong className="text-slate-900 block mb-0.5">
-                    Phonics &amp; Vocabulary Acquisition:
-                  </strong>
-                  Etymology, context clues, prefixes, suffixes, and robust vocabulary
-                  expansion.
-                </div>
-                <div className="p-3.5 bg-white rounded-lg border border-slate-200">
-                  <strong className="text-slate-900 block mb-0.5">Textual Analysis:</strong>
-                  Identifying central themes, cause and effect, author’s purpose, and
-                  figurative language.
-                </div>
-                <div className="p-3.5 bg-white rounded-lg border border-slate-200">
-                  <strong className="text-slate-900 block mb-0.5">
-                    Grammar &amp; Sentence Mechanics:
-                  </strong>
-                  Parts of speech, punctuation rules, sentence variety, and paragraph
-                  flow.
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm space-y-4">
-              <h3 className="text-xl font-bold text-slate-900">
-                The Under One Roof Advantage in Hicksville
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                At Eye Level Learning Center of Hicksville (760 S Broadway), your
-                family accesses both math and complete English reading and writing
-                under one roof.
-              </p>
-              <div className="p-4 bg-slate-50 rounded-lg text-xs sm:text-sm text-slate-700 space-y-2">
-                <p>
-                  <strong>Versus Mathnasium Plainview Hicksville:</strong> Mathnasium
-                  provides math-only instruction; Eye Level gives your child access to
-                  comprehensive English writing and literature analysis in the same
-                  center.
-                </p>
-                <p>
-                  <strong>Versus Kumon (495 S Broadway):</strong> Kumon relies heavily
-                  on repetitive worksheets and speed drills; Eye Level incorporates
-                  dedicated four-domain writing composition and one-to-one coaching
-                  that supports self-directed learning.
-                </p>
-              </div>
-            </div>
+      {/* Reading skills + photo */}
+      <section className="py-14 sm:py-16 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              Reading skills we strengthen
+            </h2>
+            <p className="text-slate-300 text-sm mb-6 leading-relaxed">
+              Strong writing grows from strong reading. At our Hicksville
+              center, coaches notice where comprehension slips and rebuild from
+              there.
+            </p>
+            <ul className="space-y-3">
+              {readingSkills.map((skill) => (
+                <li key={skill} className="flex gap-3 text-sm text-slate-100">
+                  <span className="text-amber-400 font-bold" aria-hidden="true">
+                    ✓
+                  </span>
+                  <span>{skill}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative min-h-[260px] overflow-hidden">
+            <Image
+              src={SITE.englishImage}
+              alt="Reading and writing practice at Eye Level Learning Center of Hicksville"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>
 
-      <section id="english-booking" className="py-16 bg-white border-t border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ConsultationForm id="english-consultation-form" />
+      {/* Progression ribbon */}
+      <section className="py-14 sm:py-16 bg-[#f7f4ef]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">
+            From first sentence to research report
+          </h2>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {progression.map((step, index) => (
+              <li
+                key={step.title}
+                className="bg-white border border-stone-200 p-5 text-center"
+              >
+                <span className="block text-amber-700 text-xs font-bold uppercase tracking-wider mb-2">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
+                <p className="text-xs text-slate-600">{step.detail}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
+
+      <PageCta
+        tone="amber"
+        heading="Wondering which writing form needs the most help?"
+        body="A free level test shows us where reading and writing stand today. We’ll explain it in parent-friendly language—no jargon."
+      />
     </>
   );
 }

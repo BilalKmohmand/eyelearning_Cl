@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { SITE } from "@/lib/site";
 
 export function Footer() {
@@ -7,36 +8,31 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div className="space-y-4">
-            <h2 className="text-white text-base font-bold">{SITE.name}</h2>
+            <BrandLogo variant="dark" />
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-              Diagnostic math and English tutoring center in Hicksville, NY. We
-              offer foundational arithmetic, critical-thinking math, reading
-              comprehension, and structured four-domain writing for students from
-              Pre-K through Grade 12.
+              A calm, step-by-step Math and English learning center for families
+              in Hicksville, NY. We start with a free level test, then coach
+              your child one-to-one through clear booklets—from Pre-K through
+              Grade 12.
             </p>
-            <div className="text-xs text-slate-400">
+            <div className="text-xs text-slate-500">
               Franchise location of Eye Level (Daekyo).
             </div>
           </div>
 
           <div>
             <h2 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
-              Academic Programs
+              For Parents
             </h2>
             <ul className="space-y-2.5">
               <li>
                 <Link href="/math-tutoring-hicksville/" className="hover:text-white transition-colors">
-                  Math Tutoring (Basic &amp; Critical Thinking)
+                  Math Tutoring
                 </Link>
               </li>
               <li>
                 <Link href="/english-tutoring-hicksville/" className="hover:text-white transition-colors">
-                  English Tutoring (Reading &amp; 4-Domain Writing)
-                </Link>
-              </li>
-              <li>
-                <Link href="/math-tutoring-hicksville/" className="hover:text-white transition-colors">
-                  Summit of Math (Secondary Curriculum)
+                  English Tutoring
                 </Link>
               </li>
               <li>
@@ -64,11 +60,10 @@ export function Footer() {
 
           <div>
             <h2 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
-              Center Hours &amp; Location
+              Visit Us
             </h2>
             <p className="text-slate-300 font-medium mb-1">{SITE.address.full}</p>
             <p className="mb-4">
-              Telephone:{" "}
               <a
                 href={`tel:${SITE.telephoneTel}`}
                 className="text-amber-400 font-bold hover:underline"
@@ -91,11 +86,8 @@ export function Footer() {
 
           <div>
             <h2 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
-              Service Area Communities
+              Nearby Towns We Serve
             </h2>
-            <p className="text-xs text-slate-400 mb-3">
-              Serving Nassau County students across:
-            </p>
             <div className="text-xs text-slate-300 flex flex-wrap gap-x-2 gap-y-1 mb-6">
               {SITE.serviceArea.map((town, idx) => (
                 <span key={town}>
@@ -115,17 +107,17 @@ export function Footer() {
               </li>
               <li>
                 <a href={SITE.social.facebook} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
-                  Facebook Page
+                  Facebook
                 </a>
               </li>
               <li>
                 <a href={SITE.social.instagram} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
-                  Instagram Profile
+                  Instagram
                 </a>
               </li>
               <li>
                 <a href={SITE.social.youtube} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
-                  YouTube Channel
+                  YouTube
                 </a>
               </li>
             </ul>

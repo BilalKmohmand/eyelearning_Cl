@@ -129,7 +129,7 @@ export function ConsultationForm({ id = "consultation-form" }: { id?: string }) 
           Direct Appointment Request
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
-          Book a Free Level Test &amp; Consultation
+          Book a Free Level Test
         </h2>
         <p className="text-sm sm:text-base text-slate-600 mb-8">
           Meet with our educational director at 760 S Broadway, Hicksville. We will conduct an individualized diagnostic evaluation to assess your child’s math and reading/writing starting point.

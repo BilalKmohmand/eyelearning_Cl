@@ -1,12 +1,29 @@
-import { AtAGlance } from "@/components/AtAGlance";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { ConsultationForm } from "@/components/ConsultationForm";
 import { JsonLd } from "@/components/JsonLd";
 import { schemasForPage } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
 export const metadata = buildMetadata("contact");
+
+const directions = [
+  {
+    route: "From the Long Island Expressway (I-495)",
+    detail:
+      "[PLACEHOLDER: Exit guidance toward S Broadway / Hicksville.] Continue to 760 S Broadway. Look for Eye Level Learning Center of Hicksville at street level.",
+  },
+  {
+    route: "From the Northern State Parkway",
+    detail:
+      "[PLACEHOLDER: Exit guidance toward Hicksville / Broadway.] Follow local signs to S Broadway and continue to 760.",
+  },
+  {
+    route: "From the Southern State Parkway",
+    detail:
+      "[PLACEHOLDER: Exit guidance toward Hicksville.] Connect to local roads ending at S Broadway; the center is at 760 S Broadway.",
+  },
+];
 
 export default function ContactPage() {
   return (
@@ -15,96 +32,133 @@ export default function ContactPage() {
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },
-          { name: "Contact & Directions (Hicksville, NY)" },
+          { name: "Contact" },
         ]}
       />
 
-      <section className="bg-slate-900 text-white py-16 sm:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <div className="text-xs font-semibold tracking-wider uppercase text-amber-400">
-            Center Location &amp; Inquiries
+      {/* Map first */}
+      <section className="bg-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="min-h-[320px] sm:min-h-[420px] w-full">
+            <iframe
+              title="Map showing Eye Level Learning Center of Hicksville at 760 S Broadway"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-73.545%2C40.748%2C-73.515%2C40.768&amp;layer=mapnik&amp;marker=40.758%2C-73.530"
+              className="w-full h-[320px] sm:h-[420px] border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-            Contact Eye Level Learning Center of Hicksville
-          </h1>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Located at 760 S Broadway, Hicksville, NY 11801. Call 516-597-5300 or
-            schedule an in-person diagnostic consultation using our request form.
-          </p>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-            <div className="lg:col-span-5 space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                  Center Information
-                </h2>
-                <div className="space-y-4 text-sm text-slate-700">
-                  <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                    <strong className="block text-slate-900 font-semibold mb-1">
-                      Business Name:
-                    </strong>
-                    {SITE.name}
-                  </div>
-                  <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                    <strong className="block text-slate-900 font-semibold mb-1">
-                      Physical Address:
-                    </strong>
-                    {SITE.address.full}
-                  </div>
-                  <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                    <strong className="block text-slate-900 font-semibold mb-1">
-                      Telephone:
-                    </strong>
-                    <a
-                      href={`tel:${SITE.telephoneTel}`}
-                      className="text-amber-700 font-bold hover:underline"
-                    >
-                      {SITE.telephone}
-                    </a>
-                  </div>
-                  <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                    <strong className="block text-slate-900 font-semibold mb-2">
-                      Operating Hours:
-                    </strong>
-                    <ul className="space-y-1 text-xs text-slate-600">
-                      <li>Tuesday to Friday: 3:00 PM – 7:00 PM</li>
-                      <li>Saturday: 10:00 AM – 2:00 PM</li>
-                      <li>Sunday and Monday: Closed</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">
-                  Service Area Communities
-                </h3>
-                <p className="text-xs text-slate-600 mb-3">
-                  Our Hicksville center actively serves families across:
-                </p>
-                <div className="flex flex-wrap gap-2 text-xs text-slate-700">
-                  {SITE.serviceArea.map((town) => (
-                    <span
-                      key={town}
-                      className="bg-slate-100 px-3 py-1.5 rounded-md border border-slate-200"
-                    >
-                      {town}
-                    </span>
-                  ))}
-                </div>
-              </div>
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-5 space-y-6">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-amber-700 mb-2">
+                Contact · Hicksville, NY
+              </p>
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+                Find us on S Broadway
+              </h1>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Stop by during center hours or call ahead. To schedule a free
+                level test, use the booking page—we keep the form in one place
+                so nothing gets lost.
+              </p>
             </div>
 
-            <div className="lg:col-span-7">
-              <ConsultationForm id="contact-consultation-form" />
+            <div className="border border-slate-200 bg-slate-50 p-6 space-y-4">
+              <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500">
+                Address
+              </h2>
+              <address className="not-italic text-lg font-bold text-slate-900">
+                {SITE.address.full}
+              </address>
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <a
+                  href={`tel:${SITE.telephoneTel}`}
+                  className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm"
+                >
+                  Call {SITE.telephone}
+                </a>
+                <a
+                  href={SITE.mapDirectionsUrl}
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-lg border border-slate-300 bg-white text-slate-900 font-semibold text-sm"
+                >
+                  Open in Google Maps
+                </a>
+              </div>
+              <p className="text-xs text-slate-500">
+                Prefer email?{" "}
+                <span className="font-medium text-slate-700">
+                  [PLACEHOLDER: center email address]
+                </span>
+              </p>
             </div>
+
+            <Link
+              href="/free-level-test/"
+              className="inline-flex items-center justify-center w-full min-h-[48px] px-5 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm"
+            >
+              Book Free Level Test
+            </Link>
           </div>
 
-          <AtAGlance />
+          <div className="lg:col-span-7 space-y-8">
+            <div>
+              <h2 className="text-xl font-bold text-slate-900 mb-4">
+                Center hours
+              </h2>
+              <table className="w-full text-sm text-left border border-slate-200">
+                <caption className="sr-only">
+                  Eye Level Learning Center of Hicksville weekly hours
+                </caption>
+                <thead className="bg-slate-900 text-white">
+                  <tr>
+                    <th scope="col" className="px-4 py-3 font-semibold">
+                      Day
+                    </th>
+                    <th scope="col" className="px-4 py-3 font-semibold">
+                      Hours
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {SITE.hours.lines.map((line) => (
+                    <tr key={line.days} className="border-t border-slate-200">
+                      <th scope="row" className="px-4 py-3 font-medium text-slate-900">
+                        {line.days}
+                      </th>
+                      <td className="px-4 py-3 text-slate-700">{line.hours}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-bold text-slate-900 mb-4">
+                Driving directions
+              </h2>
+              <ul className="space-y-4">
+                {directions.map((item) => (
+                  <li
+                    key={item.route}
+                    className="border-l-2 border-amber-500 pl-4"
+                  >
+                    <h3 className="font-bold text-slate-900 text-sm mb-1">
+                      {item.route}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {item.detail}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </>

@@ -39,8 +39,8 @@ export const SITE = {
   },
   programs: ["Math", "English", "Summit of Math"] as const,
   gradeRange: "Pre-K through Grade 12",
-  cta: "Book a free level test and consultation",
-  ctaShort: "Book Free Test",
+  cta: "Book a free level test",
+  ctaShort: "Book Free Level Test",
   serviceArea: [
     "Hicksville",
     "Plainview",
@@ -67,48 +67,81 @@ export const SITE = {
     "https://maps.google.com/?q=760+S+Broadway,+Hicksville,+NY+11801",
 } as const;
 
-export const FAQ_ITEMS = [
+export type FaqCategory =
+  | "Getting Started"
+  | "Schedule & Grades"
+  | "Method"
+  | "Tuition";
+
+export const FAQ_ITEMS: ReadonlyArray<{
+  category: FaqCategory;
+  question: string;
+  shortAnswer: string;
+  detailedAnswer: string;
+}> = [
   {
+    category: "Getting Started",
     question: "How does the free level test work?",
     shortAnswer:
-      "The free level test at Eye Level Learning Center of Hicksville is a diagnostic assessment administered in person to pinpoint your child's exact mathematical calculation, problem-solving, reading comprehension, and writing abilities before any instruction begins.",
+      "Your child takes a short in-person diagnostic at our Hicksville center so we can see exactly what they know in math and/or English before any lessons begin.",
     detailedAnswer:
-      "Rather than assigning material according to grade level or chronological age, our diagnostic test discovers specific knowledge gaps and areas of strength. Following the test, our instructors conduct a personal consultation with parents to review results, demonstrate sample curriculum booklets, and outline a tailored, step-by-step learning trajectory.",
+      "We do not place children by grade alone. The level test finds strengths and gaps, then we sit with you to walk through the results, show sample booklets, and outline a calm, step-by-step plan. There is no obligation to enroll.",
   },
   {
+    category: "Getting Started",
+    question: "What should we bring to the level test?",
+    shortAnswer:
+      "Bring your child, a parent or guardian, and any recent school work or report notes you want us to see. Pencils and booklets are provided at the center.",
+    detailedAnswer:
+      "If your child wears glasses, please bring them. Optional items that help the conversation: a recent quiz, a writing sample, or a note from a teacher about topics that feel hard. Arrive a few minutes early so your child can settle in.",
+  },
+  {
+    category: "Getting Started",
+    question: "How long does the first visit take?",
+    shortAnswer:
+      "Plan on about [PLACEHOLDER: 45–75 minutes] for the diagnostic plus a parent conversation, depending on the subjects you choose.",
+    detailedAnswer:
+      "The assessment itself is paced for your child—not a race. Afterward, we review results with you so you leave knowing what the starting level means and what the next weeks would look like if you enroll.",
+  },
+  {
+    category: "Schedule & Grades",
     question: "How are sessions scheduled at the Hicksville center?",
     shortAnswer:
-      "Sessions at Eye Level Learning Center of Hicksville are scheduled during center hours: Tuesday through Friday from 3:00 PM to 7:00 PM, and Saturday from 10:00 AM to 2:00 PM, with students attending designated weekly time slots.",
+      "Students come during center hours: Tuesday–Friday 3:00–7:00 PM and Saturday 10:00 AM–2:00 PM, on a consistent weekly slot you choose with us.",
     detailedAnswer:
-      "Families select consistent weekly study sessions that accommodate their after-school and weekend commitments. During each visit, students complete tailored classroom work with one-to-one coaching and receive organized practice booklets for home completion between center visits.",
+      "We work around after-school activities when we can. At each visit your child works through their booklets with one-to-one coaching, then takes home clear practice for the days between sessions.",
   },
   {
-    question: "What grade levels are served at the Hicksville center?",
+    category: "Schedule & Grades",
+    question: "What grade levels do you serve?",
     shortAnswer:
-      "Eye Level Learning Center of Hicksville serves students from Pre-K through Grade 12, with a primary instructional concentration on elementary and middle school learners building critical foundational mathematics and writing competence.",
+      "We welcome students from Pre-K through Grade 12 at Eye Level Learning Center of Hicksville.",
     detailedAnswer:
-      "Early learners in Pre-K and Kindergarten develop fine motor control, basic numeracy, phonics, and listening skills. Elementary and middle school students build mental arithmetic, geometry, critical-thinking word problem skills, reading comprehension, and formal writing. High school students benefit from advanced algebraic thinking through Summit of Math.",
+      "Younger learners build early number sense, phonics, and confidence. Elementary and middle school students strengthen arithmetic, problem solving, reading, and writing. Older students can continue into Summit of Math for secondary topics.",
   },
   {
-    question: "How does the Eye Level method differ from traditional school instruction?",
+    category: "Method",
+    question: "How is Eye Level different from regular school homework help?",
     shortAnswer:
-      "Unlike school classrooms that advance on fixed group pacing regardless of individual readiness, the Eye Level method begins at each student's verified comfort level, ensuring total concept mastery before introducing more complex topics.",
+      "School moves the whole class forward together. We start at your child’s verified level and only move ahead when a step is truly solid.",
     detailedAnswer:
-      "School curricula often leave partial learning gaps unaddressed as the class moves forward. Eye Level provides individualized small-step progression, active critical-thinking challenges, and instructor coaching that trains students to evaluate problems independently rather than relying on passive memorization.",
+      "Each booklet is a small, clear step. Instructors coach one-to-one so your child learns to think through a problem—not just copy an answer. That rhythm builds confidence that carries back into the classroom.",
   },
   {
-    question: "How does Eye Level compare with Kumon and Mathnasium in Hicksville?",
+    category: "Method",
+    question: "How do parents track progress?",
     shortAnswer:
-      "Eye Level Learning Center of Hicksville delivers comprehensive math and four-domain English writing under one roof, whereas Mathnasium focuses solely on math and Kumon relies primarily on repetitive computational worksheets without critical-thinking math or formal essay coaching.",
+      "You hear from us after the level test, see the booklet path we recommend, and can ask for check-ins on accuracy, speed, and independence as weeks go by.",
     detailedAnswer:
-      "At 760 S Broadway, families benefit from dual-subject enrichment in a single visit. In mathematics, Eye Level balances calculation drills with critical-thinking problem solving. In English, students master reading and write across narrative, informational, opinion, and research formats—providing broader educational development than single-subject or drill-only alternatives.",
+      "Progress shows up as cleaner work, fewer hints needed, and readiness for the next booklet. [PLACEHOLDER: Ask the center about any parent portal or written progress notes they currently use.] We keep the conversation practical: what improved, what still needs practice, and what comes next.",
   },
   {
-    question: "How is tuition determined at Eye Level Learning Center of Hicksville?",
+    category: "Tuition",
+    question: "How is tuition determined?",
     shortAnswer:
-      "Tuition is determined based on the specific academic program selected—Math, English, or both subjects—and your child's individualized study plan developed during the free diagnostic level test and consultation.",
+      "Tuition depends on the program you choose—Math, English, or both—and the study plan built from your child’s free level test.",
     detailedAnswer:
-      "Because every child's learning needs, starting level, and subject combination differ, tuition details and enrollment options are presented clearly to parents during the in-person consultation following the diagnostic evaluation, with no obligation to enroll.",
+      "Because every starting level and schedule is different, we share clear tuition options during the consultation after the diagnostic. You can take the information home with no pressure to decide on the spot.",
   },
 ] as const;
 
@@ -170,18 +203,18 @@ export const PAGE_SEO: Record<
     path: "/faq/",
     title: "Parent FAQ | Tutoring Hicksville, NY",
     description:
-      "Answers for parents about scheduling, grades, Eye Level vs Kumon and Mathnasium, and tuition consultations in Hicksville.",
+      "Answers for parents about the free level test, schedules, grades, our method, and tuition consultations in Hicksville, NY.",
     ogTitle: "Parent FAQ — Eye Level Hicksville",
     ogDescription:
-      "Plain answers about the free level test, programs, and how Eye Level compares with other Hicksville centers.",
+      "Plain answers about the free level test, programs, schedules, and what to expect at Eye Level Learning Center of Hicksville.",
   },
   contact: {
     path: "/contact/",
     title: "Contact | Learning Center Hicksville, NY",
     description:
-      "Visit 760 S Broadway, Hicksville, NY 11801 or call (516) 597-5300. Book a free level test and consultation.",
+      "Visit 760 S Broadway, Hicksville, NY 11801 or call (516) 597-5300. Hours, directions, and how to book a free level test.",
     ogTitle: "Contact Eye Level Learning Center of Hicksville",
     ogDescription:
-      "Address, hours, phone, and consultation form for Eye Level Learning Center of Hicksville.",
+      "Address, hours, phone, and directions for Eye Level Learning Center of Hicksville.",
   },
 };

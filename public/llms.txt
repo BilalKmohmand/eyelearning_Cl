@@ -9,20 +9,20 @@
 - Telephone: 516-597-5300
 - Hours: Tuesday to Friday, 3:00 PM to 7:00 PM; Saturday, 10:00 AM to 2:00 PM; closed Sunday and Monday
 - Programs: Math (basic arithmetic and critical-thinking math), English (reading, and writing in narrative, informational, opinion, and research forms), Summit of Math
-- Grades: Pre-K through Grade 12 (emphasis on elementary and middle school)
-- Method: diagnostic level test, step-by-step curriculum, one-to-one coaching for self-directed learning
-- Primary CTA: book a free level test and consultation
+- Grades: Pre-K through Grade 12
+- Method: diagnostic level test, step-by-step curriculum booklets, one-to-one coaching
+- Primary CTA: book a free level test (form only on /free-level-test/)
 - Canonical site: https://www.myeyelevelhicksville.com
 - Service area: Hicksville, Plainview, Bethpage, Syosset, Jericho, Westbury, Levittown, Old Bethpage
 
 ## Principal pages
 
-- [Home](https://www.myeyelevelhicksville.com/): Overview, process, FAQ, consultation form, map
-- [Math Tutoring](https://www.myeyelevelhicksville.com/math-tutoring-hicksville/): Math program details for Hicksville
-- [English Tutoring](https://www.myeyelevelhicksville.com/english-tutoring-hicksville/): Reading and writing program details
-- [Free Level Test](https://www.myeyelevelhicksville.com/free-level-test/): How to book the diagnostic assessment
-- [Parent FAQ](https://www.myeyelevelhicksville.com/faq/): Scheduling, grades, comparisons, tuition process
-- [Contact](https://www.myeyelevelhicksville.com/contact/): Address, hours, phone, form, map
+- [Home](https://www.myeyelevelhicksville.com/): Hero, how it works, Math/English tiles, parent trust band, hours and map
+- [Math Tutoring](https://www.myeyelevelhicksville.com/math-tutoring-hicksville/): Child experience, level ladder, booklet preview, progress timeline
+- [English Tutoring](https://www.myeyelevelhicksville.com/english-tutoring-hicksville/): Four writing forms, reading skills, writing progression
+- [Free Level Test](https://www.myeyelevelhicksville.com/free-level-test/): Visit stages, what to bring, booking form
+- [Parent FAQ](https://www.myeyelevelhicksville.com/faq/): Getting started, schedule, method, tuition
+- [Contact](https://www.myeyelevelhicksville.com/contact/): Map, address, hours, driving directions (no form)
 
 ## Social and corporate references
 
