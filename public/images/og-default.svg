@@ -7,12 +7,13 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect x="80" y="180" width="120" height="120" rx="28" fill="#F8FAFC"/>
-  <circle cx="140" cy="228" r="28" fill="none" stroke="#F59E0B" stroke-width="6"/>
-  <circle cx="140" cy="228" r="11" fill="#F59E0B"/>
-  <path d="M108 268h64" stroke="#0F2137" stroke-width="6" stroke-linecap="round"/>
-  <path d="M120 268v14M168 268v14" stroke="#0F2137" stroke-width="5" stroke-linecap="round"/>
-  <text x="240" y="250" fill="#F8FAFC" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="64" font-weight="800">Eye Level Hicksville</text>
-  <text x="240" y="320" fill="#FCD34D" font-family="DM Sans, Arial, sans-serif" font-size="32" font-weight="600">Math &amp; English Tutoring · Pre-K to Grade 12</text>
-  <text x="240" y="390" fill="#CBD5E1" font-family="DM Sans, Arial, sans-serif" font-size="26">760 S Broadway, Hicksville, NY 11801 · (516) 597-5300</text>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="28" transform="translate(120 180) scale(2.2)">
+    <path d="M12 26c0-10 5.5-18 12-18s12 8 12 18" stroke="#EC1C24"/>
+    <path d="M12 26 L8 46" stroke="#64BC48"/>
+    <path d="M36 26 L40 46" stroke="#FCB810"/>
+    <path d="M8 46 H40" stroke="#0070BC"/>
+  </g>
+  <text x="340" y="280" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="800">Eye Level</text>
+  <text x="340" y="350" fill="#FCD34D" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="600">Learning Center of Hicksville</text>
+  <text x="340" y="420" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="26">760 S Broadway · (516) 597-5300</text>
 </svg>

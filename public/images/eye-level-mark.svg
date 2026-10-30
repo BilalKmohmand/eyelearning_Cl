@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 56" role="img" aria-labelledby="elMarkTitle">
+  <title id="elMarkTitle">Eye Level</title>
+  <!-- Official-style keyhole / child mark: red arc, green & yellow sides, blue base -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.5">
+    <path d="M12 26c0-10 5.5-18 12-18s12 8 12 18" stroke="#EC1C24"/>
+    <path d="M12 26 L8 46" stroke="#64BC48"/>
+    <path d="M36 26 L40 46" stroke="#FCB810"/>
+    <path d="M8 46 H40" stroke="#0070BC"/>
+  </g>
+</svg>
