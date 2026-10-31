@@ -7,13 +7,18 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="28" transform="translate(120 180) scale(2.2)">
-    <path d="M12 26c0-10 5.5-18 12-18s12 8 12 18" stroke="#EC1C24"/>
-    <path d="M12 26 L8 46" stroke="#64BC48"/>
-    <path d="M36 26 L40 46" stroke="#FCB810"/>
-    <path d="M8 46 H40" stroke="#0070BC"/>
-  </g>
-  <text x="340" y="280" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="800">Eye Level</text>
-  <text x="340" y="350" fill="#FCD34D" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="600">Learning Center of Hicksville</text>
-  <text x="340" y="420" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="26">760 S Broadway · (516) 597-5300</text>
+  <!-- Logo tile -->
+  <svg x="100" y="195" width="220" height="220" viewBox="0 0 148 148">
+    <rect width="148" height="148" rx="28" fill="#FFFFFF"/>
+    <path
+      fill="#E62310"
+      d="M59.1 75.3 A 25.2 25.2 0 1 1 89.4 75.3 L 84.0 67.3 A 17.8 17.8 0 1 0 64.5 67.3 Z"
+    />
+    <polygon fill="#6EB92C" points="58,73 67,73 61,107 51,107"/>
+    <polygon fill="#F8BD00" points="81,73 90,73 97,107 87,107"/>
+    <rect fill="#0061B0" x="51" y="110" width="46" height="8"/>
+  </svg>
+  <text x="360" y="280" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="800">Eye Level</text>
+  <text x="360" y="350" fill="#FCD34D" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="600">Learning Center of Hicksville</text>
+  <text x="360" y="420" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="26">760 S Broadway · (516) 597-5300</text>
 </svg>

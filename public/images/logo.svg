@@ -1,14 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-labelledby="logoTitle logoDesc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 72" role="img" aria-labelledby="logoTitle logoDesc">
   <title id="logoTitle">Eye Level Learning Center of Hicksville</title>
-  <desc id="logoDesc">Eye Level keyhole mark with Eye Level Hicksville wordmark</desc>
-  <!-- Mark -->
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.5" transform="translate(4 4)">
-    <path d="M10 24c0-9 4.8-16 10.5-16S31 15 31 24" stroke="#EC1C24"/>
-    <path d="M10 24 L6.5 42" stroke="#64BC48"/>
-    <path d="M31 24 L34.5 42" stroke="#FCB810"/>
-    <path d="M6.5 42 H34.5" stroke="#0070BC"/>
-  </g>
-  <!-- Wordmark -->
-  <text x="52" y="30" fill="#111111" font-family="Arial Rounded MT Bold, Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Eye Level</text>
-  <text x="52" y="50" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600" letter-spacing="0.06em">LEARNING · HICKSVILLE</text>
+  <desc id="logoDesc">Eye Level keyhole mark with Hicksville wordmark</desc>
+  <svg x="0" y="0" width="56" height="72" viewBox="0 0 148 148">
+    <path
+      fill="#E62310"
+      d="M59.1 75.3 A 25.2 25.2 0 1 1 89.4 75.3 L 84.0 67.3 A 17.8 17.8 0 1 0 64.5 67.3 Z"
+    />
+    <polygon fill="#6EB92C" points="58,73 67,73 61,107 51,107"/>
+    <polygon fill="#F8BD00" points="81,73 90,73 97,107 87,107"/>
+    <rect fill="#0061B0" x="51" y="110" width="46" height="8"/>
+  </svg>
+  <text x="64" y="34" fill="#111111" font-family="Arial Rounded MT Bold, Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Eye Level</text>
+  <text x="64" y="54" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600" letter-spacing="0.06em">LEARNING · HICKSVILLE</text>
 </svg>

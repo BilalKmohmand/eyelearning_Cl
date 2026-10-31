@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 148" role="img" aria-labelledby="elLogoTitle">
+  <title id="elLogoTitle">Eye Level Learning</title>
+  <!-- Matches official Eye Level keyhole mark (rounded white tile) -->
+  <rect width="148" height="148" rx="28" fill="#FFFFFF"/>
+  <!-- Red arc (open at bottom) -->
+  <path
+    fill="#E62310"
+    d="M59.1 75.3
+       A 25.2 25.2 0 1 1 89.4 75.3
+       L 84.0 67.3
+       A 17.8 17.8 0 1 0 64.5 67.3
+       Z"
+  />
+  <!-- Green left leg -->
+  <polygon fill="#6EB92C" points="58,73 67,73 61,107 51,107"/>
+  <!-- Yellow right leg -->
+  <polygon fill="#F8BD00" points="81,73 90,73 97,107 87,107"/>
+  <!-- Blue base -->
+  <rect fill="#0061B0" x="51" y="110" width="46" height="8"/>
+</svg>

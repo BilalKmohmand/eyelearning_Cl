@@ -1,9 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Eye Level">
-  <rect width="64" height="64" rx="14" fill="#0F2137"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" transform="translate(12 8)">
-    <path d="M8 22c0-9 4.5-16 10-16s10 7 10 16" stroke="#EC1C24"/>
-    <path d="M8 22 L4.5 40" stroke="#64BC48"/>
-    <path d="M28 22 L31.5 40" stroke="#FCB810"/>
-    <path d="M4.5 40 H31.5" stroke="#0070BC"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 148" role="img" aria-label="Eye Level">
+  <rect width="148" height="148" rx="28" fill="#FFFFFF"/>
+  <path
+    fill="#E62310"
+    d="M59.1 75.3
+       A 25.2 25.2 0 1 1 89.4 75.3
+       L 84.0 67.3
+       A 17.8 17.8 0 1 0 64.5 67.3
+       Z"
+  />
+  <polygon fill="#6EB92C" points="58,73 67,73 61,107 51,107"/>
+  <polygon fill="#F8BD00" points="81,73 90,73 97,107 87,107"/>
+  <rect fill="#0061B0" x="51" y="110" width="46" height="8"/>
 </svg>

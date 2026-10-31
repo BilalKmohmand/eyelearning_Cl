@@ -59,7 +59,7 @@ export const SITE = {
   },
   themeColor: "#0F2137",
   businessId: "https://www.myeyelevelhicksville.com/#organization",
-  logoPath: "/images/logo.svg",
+  logoPath: "/images/eye-level-logo.png",
   heroImage: "/images/hicksville_learning_center_1793115709157.webp",
   mathImage: "/images/math_study_session_1793115709591.webp",
   englishImage: "/images/english_writing_session_1793115710023.webp",
