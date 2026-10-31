@@ -11,17 +11,17 @@ const directions = [
   {
     route: "From the Long Island Expressway (I-495)",
     detail:
-      "[PLACEHOLDER: Exit guidance toward S Broadway / Hicksville.] Continue to 760 S Broadway. Look for Eye Level Learning Center of Hicksville at street level.",
+      "Take Exit 41S (NY-106/107 / South Oyster Bay Road) toward Hicksville. Continue toward Broadway and follow S Broadway to 760. Look for Eye Level Learning Center of Hicksville at street level.",
   },
   {
     route: "From the Northern State Parkway",
     detail:
-      "[PLACEHOLDER: Exit guidance toward Hicksville / Broadway.] Follow local signs to S Broadway and continue to 760.",
+      "Take Exit 35S (Wantagh State Parkway South) or Exit 36 (Newbridge Road) toward Hicksville. Connect to local roads leading to Broadway, then continue south on S Broadway to number 760.",
   },
   {
     route: "From the Southern State Parkway",
     detail:
-      "[PLACEHOLDER: Exit guidance toward Hicksville.] Connect to local roads ending at S Broadway; the center is at 760 S Broadway.",
+      "Take Exit 28N (Wantagh Avenue / Hicksville) and follow signs toward Hicksville. Continue to Broadway / S Broadway and head to 760 S Broadway.",
   },
 ];
 
@@ -91,10 +91,14 @@ export default function ContactPage() {
                 </a>
               </div>
               <p className="text-xs text-slate-500">
-                Prefer email?{" "}
-                <span className="font-medium text-slate-700">
-                  [PLACEHOLDER: center email address]
-                </span>
+                Prefer to write first? Use the{" "}
+                <Link
+                  href="/free-level-test/"
+                  className="font-medium text-amber-700 underline"
+                >
+                  free level test form
+                </Link>{" "}
+                and we will follow up by phone or email.
               </p>
             </div>
 

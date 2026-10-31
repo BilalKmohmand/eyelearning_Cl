@@ -99,7 +99,7 @@ export const FAQ_ITEMS: ReadonlyArray<{
     category: "Getting Started",
     question: "How long does the first visit take?",
     shortAnswer:
-      "Plan on about [PLACEHOLDER: 45–75 minutes] for the diagnostic plus a parent conversation, depending on the subjects you choose.",
+      "Plan on about 45 to 75 minutes for the diagnostic plus a parent conversation, depending on whether you choose Math, English, or both.",
     detailedAnswer:
       "The assessment itself is paced for your child—not a race. Afterward, we review results with you so you leave knowing what the starting level means and what the next weeks would look like if you enroll.",
   },
@@ -133,7 +133,7 @@ export const FAQ_ITEMS: ReadonlyArray<{
     shortAnswer:
       "You hear from us after the level test, see the booklet path we recommend, and can ask for check-ins on accuracy, speed, and independence as weeks go by.",
     detailedAnswer:
-      "Progress shows up as cleaner work, fewer hints needed, and readiness for the next booklet. [PLACEHOLDER: Ask the center about any parent portal or written progress notes they currently use.] We keep the conversation practical: what improved, what still needs practice, and what comes next.",
+      "Progress shows up as cleaner work, fewer hints needed, and readiness for the next booklet. We keep check-ins practical: what improved, what still needs practice, and what comes next. Call the center anytime you want an update between visits.",
   },
   {
     category: "Tuition",

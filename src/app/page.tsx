@@ -96,23 +96,27 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Link
               href="/math-tutoring-hicksville/"
-              className="group relative min-h-[280px] overflow-hidden rounded-none sm:rounded-2xl bg-slate-900 text-white"
+              className="group relative min-h-[300px] overflow-hidden rounded-none sm:rounded-2xl bg-slate-950 text-white"
             >
               <Image
                 src={SITE.mathImage}
                 alt="Child working through Eye Level Math booklets"
                 fill
-                className="object-cover opacity-40 transition-transform duration-500 group-hover:scale-105"
+                className="object-cover opacity-45 transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="relative z-10 flex h-full flex-col justify-end p-8 sm:p-10">
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-900/35"
+                aria-hidden="true"
+              />
+              <div className="relative z-10 flex h-full min-h-[300px] flex-col justify-end p-8 sm:p-10">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-300 mb-2">
                   Eye Level Math
                 </p>
-                <h3 className="text-2xl sm:text-3xl font-extrabold mb-3">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
                   From basic arithmetic to Summit of Math
                 </h3>
-                <p className="text-sm text-slate-200 max-w-md mb-4">
+                <p className="text-sm text-slate-100 max-w-md mb-4 leading-relaxed">
                   Calculation fluency plus critical-thinking problems, coached
                   one-to-one in small steps.
                 </p>
@@ -124,23 +128,27 @@ export default function HomePage() {
 
             <Link
               href="/english-tutoring-hicksville/"
-              className="group relative min-h-[280px] overflow-hidden rounded-none sm:rounded-2xl bg-slate-900 text-white"
+              className="group relative min-h-[300px] overflow-hidden rounded-none sm:rounded-2xl bg-slate-950 text-white"
             >
               <Image
                 src={SITE.englishImage}
                 alt="Student practicing reading and writing at Eye Level Hicksville"
                 fill
-                className="object-cover opacity-40 transition-transform duration-500 group-hover:scale-105"
+                className="object-cover opacity-45 transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="relative z-10 flex h-full flex-col justify-end p-8 sm:p-10">
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-900/35"
+                aria-hidden="true"
+              />
+              <div className="relative z-10 flex h-full min-h-[300px] flex-col justify-end p-8 sm:p-10">
                 <p className="text-xs font-semibold uppercase tracking-widest text-amber-300 mb-2">
                   Eye Level English
                 </p>
-                <h3 className="text-2xl sm:text-3xl font-extrabold mb-3">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
                   Reading plus four kinds of writing
                 </h3>
-                <p className="text-sm text-slate-200 max-w-md mb-4">
+                <p className="text-sm text-slate-100 max-w-md mb-4 leading-relaxed">
                   Narrative, informational, opinion, and research—so school
                   writing feels less scary at home.
                 </p>
@@ -153,19 +161,44 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust band — placeholder testimonial */}
+      {/* What parents notice */}
       <section className="py-14 bg-white border-y border-slate-200">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-amber-700 mb-4">
-            From a Hicksville parent
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-amber-700 mb-3 text-center">
+            What Hicksville parents notice
           </p>
-          <blockquote className="text-xl sm:text-2xl font-medium text-slate-900 leading-snug mb-4">
-            “[PLACEHOLDER: Short parent quote about feeling clearer after the
-            level test and seeing steadier homework habits.]”
-          </blockquote>
-          <p className="text-sm text-slate-500">
-            — [PLACEHOLDER: Parent first name], Hicksville
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-10">
+            Clearer starting point. Calmer homework nights.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center md:text-left">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                After the free level test
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                You leave knowing exactly where your child is strong and which
+                small steps still need practice—not just a grade-level label.
+              </p>
+            </div>
+            <div className="text-center md:text-left">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                During weekly visits
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                One-to-one coaching keeps frustration low. Booklets match your
+                child’s level, so work feels doable instead of overwhelming.
+              </p>
+            </div>
+            <div className="text-center md:text-left">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Back at home
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Practice between sessions is short and clear, which helps
+                homework habits feel steadier for both kids and parents.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

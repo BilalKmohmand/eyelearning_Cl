@@ -125,12 +125,8 @@ export default function MathTutoringPage() {
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
               Booklets move in small pages: a short warm-up, guided practice,
-              then independent problems. Parents can see the pattern during the
-              free consultation.
-            </p>
-            <p className="text-xs text-slate-500">
-              [PLACEHOLDER: Replace with a photo or scan of a real Eye Level
-              Math booklet page if available.]
+              then independent problems. At the free level test consultation,
+              we show you sample pages so you can see how each step builds.
             </p>
           </div>
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">

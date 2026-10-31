@@ -97,8 +97,7 @@ export default function FreeLevelTestPage() {
                 How long it takes
               </h2>
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                Plan on about{" "}
-                <strong>[PLACEHOLDER: 45–75 minutes]</strong> for the
+                Plan on about <strong>45 to 75 minutes</strong> for the
                 diagnostic plus parent conversation, depending on Math,
                 English, or both.
               </p>
