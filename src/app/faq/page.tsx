@@ -24,7 +24,7 @@ export default function FaqPage() {
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-amber-400 mb-3">
             Parent FAQ · Hicksville, NY
           </p>
-          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight text-white mb-4">
             Straight answers before you book
           </h1>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">

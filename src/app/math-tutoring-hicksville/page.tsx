@@ -89,7 +89,7 @@ export default function MathTutoringPage() {
       {/* Level ladder */}
       <section className="py-14 sm:py-18 bg-slate-900 text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
             The Eye Level Math ladder
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mb-10 max-w-2xl">

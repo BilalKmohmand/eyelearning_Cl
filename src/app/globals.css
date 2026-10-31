@@ -56,7 +56,8 @@
   h5,
   h6 {
     font-family: var(--font-display);
-    color: var(--color-brand-primary);
+    /* Inherit from parent so dark sections (text-white) stay readable */
+    color: inherit;
     letter-spacing: -0.02em;
     font-weight: 700;
   }
