@@ -13,7 +13,8 @@ Update the same NAP on:
 - [ ] Yelp
 - [ ] Foursquare
 - [ ] Nextdoor
-- [ ] Facebook — correct the misspelled **hicskville** Facebook address/URL to the accurate Hicksville listing and align the name/address/phone
+- [ ] Facebook — page URL is currently `facebook.com/eyelevelhicskville` (misspelled). Website now links to that live page; ask Meta/page admin to rename the username to **Hicksville** when possible and align name/address/phone
+- [x] Website footer Instagram/Facebook updated to local Hicksville accounts (`@eyelevel_hicksville`, `eyelevelhicskville`)
 
 ## Search Console & analytics
 - [ ] Verify `https://www.myeyelevelhicksville.com` in Google Search Console

@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PageCta } from "@/components/PageCta";
 import { schemasForPage } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
-import { SITE } from "@/lib/site";
+import { PARENT_REVIEWS, SITE } from "@/lib/site";
 
 export const metadata = buildMetadata("home");
 
@@ -161,43 +161,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What parents notice */}
-      <section className="py-14 bg-white border-y border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-amber-700 mb-3 text-center">
-            What Hicksville parents notice
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-10">
-            Clearer starting point. Calmer homework nights.
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center md:text-left">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">
-                After the free level test
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                You leave knowing exactly where your child is strong and which
-                small steps still need practice—not just a grade-level label.
-              </p>
-            </div>
-            <div className="text-center md:text-left">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">
-                During weekly visits
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                One-to-one coaching keeps frustration low. Booklets match your
-                child’s level, so work feels doable instead of overwhelming.
-              </p>
-            </div>
-            <div className="text-center md:text-left">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Back at home
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Practice between sessions is short and clear, which helps
-                homework habits feel steadier for both kids and parents.
-              </p>
-            </div>
+      {/* Real Google parent reviews */}
+      <section className="py-14 sm:py-16 bg-white border-y border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-amber-700 mb-3">
+              Google reviews from Hicksville families
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+              Parents see the difference in confidence and skills
+            </h2>
+            <p className="text-sm text-slate-600">
+              Excerpts from public Google reviews for Eye Level Learning Center
+              of Hicksville.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {PARENT_REVIEWS.map((review) => (
+              <blockquote
+                key={review.name}
+                className="flex flex-col justify-between border border-slate-200 bg-slate-50 p-6 text-left"
+              >
+                <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                  “{review.quote}”
+                </p>
+                <footer className="text-sm font-semibold text-slate-900">
+                  — {review.name}
+                  <span className="block text-xs font-normal text-slate-500 mt-0.5">
+                    Google review · Hicksville, NY
+                  </span>
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a
+              href={SITE.social.googleReviews}
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-lg border border-slate-300 bg-white text-slate-900 font-semibold text-sm hover:bg-slate-50"
+            >
+              Read more on Google
+            </a>
+            <a
+              href={SITE.social.instagram}
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-sm font-semibold text-amber-700 hover:underline"
+            >
+              Follow @eyelevel_hicksville
+            </a>
           </div>
         </div>
       </section>

@@ -97,27 +97,27 @@ export function Footer() {
               ))}
             </div>
             <h3 className="text-white text-xs font-semibold uppercase tracking-wider mb-2">
-              Official Profiles
+              Hicksville social
             </h3>
             <ul className="text-xs text-slate-400 space-y-1.5">
               <li>
-                <a href={SITE.social.corporate} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
-                  Corporate Center Listing
+                <a href={SITE.social.instagram} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
+                  Instagram — @eyelevel_hicksville
                 </a>
               </li>
               <li>
                 <a href={SITE.social.facebook} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
-                  Facebook
+                  Facebook — Eye Level Hicksville
                 </a>
               </li>
               <li>
-                <a href={SITE.social.instagram} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
-                  Instagram
+                <a href={SITE.social.googleReviews} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
+                  Google reviews
                 </a>
               </li>
               <li>
-                <a href={SITE.social.youtube} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
-                  YouTube
+                <a href={SITE.social.corporate} rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
+                  Corporate center listing
                 </a>
               </li>
             </ul>

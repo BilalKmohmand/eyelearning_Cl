@@ -52,10 +52,13 @@ export const SITE = {
     "Old Bethpage",
   ],
   social: {
-    facebook: "https://www.facebook.com/EyeLevelEducation",
-    instagram: "https://www.instagram.com/eyeleveleducation/",
+    // Local Hicksville pages (Facebook username is misspelled "hicskville" on Meta — link to the live page)
+    facebook: "https://www.facebook.com/eyelevelhicskville/",
+    instagram: "https://www.instagram.com/eyelevel_hicksville/",
     youtube: "https://www.youtube.com/channel/UC4V1Y4QQDLumBVTI24PCYCw",
     corporate: "https://www.myeyelevel.com/US/center/hicksville",
+    googleReviews:
+      "https://www.google.com/maps/search/?api=1&query=Eye+Level+Learning+Center+of+Hicksville+760+S+Broadway",
   },
   themeColor: "#0F2137",
   businessId: "https://www.myeyelevelhicksville.com/#organization",
@@ -66,6 +69,40 @@ export const SITE = {
   mapDirectionsUrl:
     "https://maps.google.com/?q=760+S+Broadway,+Hicksville,+NY+11801",
 } as const;
+
+/** Short excerpts from public Google reviews for the Hicksville center. */
+export const PARENT_REVIEWS = [
+  {
+    name: "Myeesha H.",
+    quote:
+      "I researched several tutoring places and Eye Level is hands down the best! My daughter was struggling with reading and thanks to Ms. Sam she jumped 3 reading levels in a matter of 4 months.",
+  },
+  {
+    name: "Lauren D.",
+    quote:
+      "My son is two and a half years old and has been going to Eye Level for less than a year. He can write his numbers 1–5 and his name, he knows his phonics, and many other concepts well above his age level.",
+  },
+  {
+    name: "Swathi G.",
+    quote:
+      "My son has been attending Eye Level Learning Center for the past four years, and we couldn’t be more pleased. The program has helped him build a strong foundation in both Math and English.",
+  },
+  {
+    name: "Olesya L.",
+    quote:
+      "My husband and I were looking for a great learning center for our daughter, who needed a little extra support in math and English. We joined Eye Level in September, and I cannot express enough how impressed we are.",
+  },
+  {
+    name: "Bilal K.",
+    quote:
+      "Eye Level Learning Center has made a huge difference in my child’s confidence. The structured approach in Math and English really works.",
+  },
+  {
+    name: "Anjali K.",
+    quote:
+      "My daughter was lost in maths and was not doing well at all, but after meeting Jyoti at Eye Level she is doing an amazing job. I am so grateful for shaping my daughter’s confidence.",
+  },
+] as const;
 
 export type FaqCategory =
   | "Getting Started"

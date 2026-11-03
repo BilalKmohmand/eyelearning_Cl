@@ -26,8 +26,8 @@ export function organizationSchema() {
     sameAs: [
       SITE.social.facebook,
       SITE.social.instagram,
-      SITE.social.youtube,
       SITE.social.corporate,
+      SITE.social.googleReviews,
     ],
     parentOrganization: {
       "@type": "Organization",
