@@ -57,6 +57,16 @@ CONSULTATION_WEBHOOK_URL=             # optional CRM/Zapier/Make endpoint
 
 Without `RESEND_API_KEY`, submissions are still stored locally so the form works in development. With the key set, each request is emailed to `CONTACT_EMAIL_RECIPIENT` (default `eyelevelhicksville@gmail.com`).
 
+## Analytics (GA4)
+
+The site is tagged with Google Analytics 4 Measurement ID **`G-Q0Q9FD0KMQ`**.
+
+- Page views load automatically via `GoogleAnalytics`
+- Tracked events: `phone_click` (any `tel:` link), `book_level_test_click` (links to `/free-level-test/`), `generate_lead` + `consultation_submit` (successful form posts)
+- Override with `NEXT_PUBLIC_GA_MEASUREMENT_ID` in `.env.local` / Vercel if needed
+
+Local SEO keywords stay in titles, headings, and body copy (Hicksville, Math tutoring, English tutoring, free level test). We do **not** use a meta keywords tag — Google ignores it.
+
 ## Deploy (Vercel)
 
 This site replaces the older Django + `vercel.json` Python build. The repo includes a Next.js `vercel.json`.

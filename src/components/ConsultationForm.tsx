@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackConsultationSubmit } from "@/lib/analytics";
 import { SITE } from "@/lib/site";
 
 interface FormState {
@@ -107,6 +108,7 @@ export function ConsultationForm({ id = "consultation-form" }: { id?: string }) 
         );
       }
 
+      trackConsultationSubmit(formData.program || "unspecified");
       setSubmitSuccess(
         result.message ||
           'Thank you for booking with Eye Level Learning Center of Hicksville. Our instructional coordinator will call you to confirm your child’s free diagnostic level test.'

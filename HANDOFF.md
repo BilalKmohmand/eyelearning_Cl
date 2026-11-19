@@ -17,9 +17,10 @@ Update the same NAP on:
 - [x] Website footer Instagram/Facebook updated to local Hicksville accounts (`@eyelevel_hicksville`, `eyelevelhicskville`)
 
 ## Search Console & analytics
-- [ ] Verify `https://www.myeyelevelhicksville.com` in Google Search Console
-- [ ] Submit `https://www.myeyelevelhicksville.com/sitemap.xml`
-- [ ] Configure GA4 events for `tel:` clicks and consultation form submissions
+- [x] GA4 Measurement ID `G-Q0Q9FD0KMQ` installed sitewide (page views + `phone_click`, `book_level_test_click`, `generate_lead` / `consultation_submit`)
+- [ ] Verify `https://www.myeyelevelhicksville.com` in Google Search Console (needs client verification code / DNS or HTML tag)
+- [ ] Submit `https://www.myeyelevelhicksville.com/sitemap.xml` in Search Console after verification
+- [ ] In GA4 Admin → Events, mark `generate_lead`, `phone_click`, and `book_level_test_click` as key events / conversions
 
 ## Reviews routine
 - [ ] Establish a routine for requesting customer reviews after successful consultations or progress milestones (no incentives that violate platform policies)

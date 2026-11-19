@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { SiteShell } from "@/components/SiteShell";
 import { SITE } from "@/lib/site";
 import "./globals.css";
@@ -53,6 +54,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${dmSans.className} antialiased bg-slate-50 text-slate-900 selection:bg-amber-100 selection:text-amber-900`}>
+        <GoogleAnalytics />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>
