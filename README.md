@@ -57,13 +57,14 @@ CONSULTATION_WEBHOOK_URL=             # optional CRM/Zapier/Make endpoint
 
 Without `RESEND_API_KEY`, submissions are still stored locally so the form works in development. With the key set, each request is emailed to `CONTACT_EMAIL_RECIPIENT` (default `eyelevelhicksville@gmail.com`).
 
-## Analytics (GA4)
+## Analytics (GTM + GA4)
 
-The site is tagged with Google Analytics 4 Measurement ID **`G-Q0Q9FD0KMQ`**.
+- **Google Tag Manager:** `GTM-W837H2Z5` (head bootstrap + body `noscript`)
+- **GA4 Measurement ID:** `G-Q0Q9FD0KMQ` (gtag helper + config)
+- Tracked `dataLayer` / gtag events: `phone_click`, `book_level_test_click`, `generate_lead`, `consultation_submit`
+- Override with `NEXT_PUBLIC_GTM_ID` / `NEXT_PUBLIC_GA_MEASUREMENT_ID` in `.env.local` / Vercel
 
-- Page views load automatically via `GoogleAnalytics`
-- Tracked events: `phone_click` (any `tel:` link), `book_level_test_click` (links to `/free-level-test/`), `generate_lead` + `consultation_submit` (successful form posts)
-- Override with `NEXT_PUBLIC_GA_MEASUREMENT_ID` in `.env.local` / Vercel if needed
+If GA4 is also configured as a tag inside the GTM container with the same Measurement ID, disable one path to avoid double pageviews (prefer GTM-only once the container is ready).
 
 Local SEO keywords stay in titles, headings, and body copy (Hicksville, Math tutoring, English tutoring, free level test). We do **not** use a meta keywords tag — Google ignores it.
 

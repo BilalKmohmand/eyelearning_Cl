@@ -1,6 +1,9 @@
 export const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-Q0Q9FD0KMQ";
 
+export const GTM_ID =
+  process.env.NEXT_PUBLIC_GTM_ID?.trim() || "GTM-W837H2Z5";
+
 type GtagFn = (...args: unknown[]) => void;
 
 declare global {
@@ -14,10 +17,19 @@ export function trackEvent(
   eventName: string,
   params?: Record<string, string | number | boolean | undefined>
 ) {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") {
-    return;
+  if (typeof window === "undefined") return;
+
+  // GTM custom-event friendly push
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: eventName,
+    ...params,
+  });
+
+  // GA4 via gtag when available
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, params);
   }
-  window.gtag("event", eventName, params);
 }
 
 export function trackPhoneClick(location: string) {

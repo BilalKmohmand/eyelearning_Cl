@@ -17,7 +17,9 @@ Update the same NAP on:
 - [x] Website footer Instagram/Facebook updated to local Hicksville accounts (`@eyelevel_hicksville`, `eyelevelhicskville`)
 
 ## Search Console & analytics
-- [x] GA4 Measurement ID `G-Q0Q9FD0KMQ` installed sitewide (page views + `phone_click`, `book_level_test_click`, `generate_lead` / `consultation_submit`)
+- [x] GTM container `GTM-W837H2Z5` installed sitewide (head + body noscript)
+- [x] GA4 Measurement ID `G-Q0Q9FD0KMQ` installed (gtag helper/config + `phone_click`, `book_level_test_click`, `generate_lead` / `consultation_submit` into dataLayer)
+- [ ] In GTM, confirm GA4 Configuration tag uses `G-Q0Q9FD0KMQ` — if yes, remove the direct gtag config in code to prevent double counting
 - [ ] Verify `https://www.myeyelevelhicksville.com` in Google Search Console (needs client verification code / DNS or HTML tag)
 - [ ] Submit `https://www.myeyelevelhicksville.com/sitemap.xml` in Search Console after verification
 - [ ] In GA4 Admin → Events, mark `generate_lead`, `phone_click`, and `book_level_test_click` as key events / conversions
